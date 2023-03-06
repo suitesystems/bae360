@@ -1,0 +1,293 @@
+<?xml version="1.0"?><!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+<head>
+	<link name="NotoSans" type="font" subtype="truetype" src="${nsfont.NotoSans_Regular}" src-bold="${nsfont.NotoSans_Bold}" src-italic="${nsfont.NotoSans_Italic}" src-bolditalic="${nsfont.NotoSans_BoldItalic}" bytes="2" />
+	<#if .locale == "zh_CN">
+		<link name="NotoSansCJKsc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKsc_Regular}" src-bold="${nsfont.NotoSansCJKsc_Bold}" bytes="2" />
+	<#elseif .locale == "zh_TW">
+		<link name="NotoSansCJKtc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKtc_Regular}" src-bold="${nsfont.NotoSansCJKtc_Bold}" bytes="2" />
+	<#elseif .locale == "ja_JP">
+		<link name="NotoSansCJKjp" type="font" subtype="opentype" src="${nsfont.NotoSansCJKjp_Regular}" src-bold="${nsfont.NotoSansCJKjp_Bold}" bytes="2" />
+	<#elseif .locale == "ko_KR">
+		<link name="NotoSansCJKkr" type="font" subtype="opentype" src="${nsfont.NotoSansCJKkr_Regular}" src-bold="${nsfont.NotoSansCJKkr_Bold}" bytes="2" />
+	<#elseif .locale == "th_TH">
+		<link name="NotoSansThai" type="font" subtype="opentype" src="${nsfont.NotoSansThai_Regular}" src-bold="${nsfont.NotoSansThai_Bold}" bytes="2" />
+	</#if>
+    <macrolist>
+        <macro id="nlheader">
+            <table class="header" style="width: 100%;">
+            	<tr>
+					<td rowspan="3" align="center"><#if companyInformation.logoUrl?length != 0><img src="${companyInformation.logoUrl}" width = "100px" height = "100px" style="float: center; margin: 0px; padding: 0px" /> </#if> </td>
+				</tr>
+			</table>
+        </macro>
+        <macro id="nlfooter">
+            <table class="footer" style="width: 100%;">
+            	<tr>
+					<td style="width: 25%;">
+						<table>
+							<tr><td>PIERRE Limited</td></tr>
+							<tr><td>Suite 1404,</td></tr>
+							<tr><td>ChinaChem Hollywood Centre</td></tr>
+							<tr><td>1-13 Hollywood Road,</td></tr>
+							<tr><td>Central, Hong Kong</td></tr>
+						</table>
+					</td>
+					<td style="width: 25%;">
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><td>Tel : (852) 2530 0993</td></tr>
+							<tr><td>Fax : (852) 2530 0994</td></tr>
+							<tr><td>hongkong@mhdt.net</td></tr>
+							<tr><td>www.mariehelenedetaillac.com</td></tr>
+						</table>
+					</td>
+					<td style="width: 40%;">
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><td>&nbsp;</td></tr>
+							<tr><td>&nbsp;</td></tr>
+							<tr><td>&nbsp;</td></tr>
+							<tr><td>Registered Office : Company Registration No 32548064</td></tr>
+						</table>
+					</td>
+					<td align="right" style="width: 10%;">
+						<table>
+							<tr><td>&nbsp;</td></tr>
+							<tr><td>&nbsp;</td></tr>
+							<tr><td>&nbsp;</td></tr>
+							<tr><td>&nbsp;</td></tr>
+							<tr><td>PAGE <pagenumber/></td></tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+        </macro>
+    </macrolist>
+    <style type="text/css">* {
+		<#if .locale == "zh_CN">
+			font-family: NotoSans, NotoSansCJKsc, sans-serif;
+		<#elseif .locale == "zh_TW">
+			font-family: NotoSans, NotoSansCJKtc, sans-serif;
+		<#elseif .locale == "ja_JP">
+			font-family: NotoSans, NotoSansCJKjp, sans-serif;
+		<#elseif .locale == "ko_KR">
+			font-family: NotoSans, NotoSansCJKkr, sans-serif;
+		<#elseif .locale == "th_TH">
+			font-family: NotoSans, NotoSansThai, sans-serif;
+		<#else>
+			font-family: NotoSans, sans-serif;
+		</#if>
+		}
+		table {
+			font-size: 9pt;
+			table-layout: fixed;
+		}
+        th {
+            font-weight: bold;
+            font-size: 8pt;
+            vertical-align: middle;
+            padding: 5px 6px 3px;
+            background-color: #e3e3e3;
+            color: #333333;
+        }
+        td {
+            padding: 4px 6px;
+        }
+		td p { align:left }
+        b {
+            font-weight: bold;
+            color: #333333;
+        }
+        table.header td {
+            padding: 0px;
+            font-size: 9pt;
+        }
+        table.footer td {
+            padding: 0px;
+            font-size: 8pt;
+        }
+        table.itemtable th {
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+        table.body td {
+            padding-top: 2px;
+        }
+        table.total {
+            page-break-inside: avoid;
+        }
+        tr.totalrow {
+            background-color: #e3e3e3;
+            line-height: 200%;
+        }
+        td.addressheader {
+            font-size: 8pt;
+            padding-top: 6px;
+            padding-bottom: 2px;
+        }
+        td.address {
+            padding-top: 0px;
+        }
+        td.totalboxmid {
+            font-size: 28pt;
+            padding-top: 20px;
+        }
+        td.totalboxbot {
+            background-color: #e3e3e3;
+            font-weight: bold;
+        }
+        span.title {
+            font-size: 28pt;
+        }
+        span.number {
+            font-size: 16pt;
+        }
+        span.itemname {
+            font-weight: bold;
+            line-height: 150%;
+        }
+        hr {
+            width: 100%;
+            color: #d3d3d3;
+            background-color: #d3d3d3;
+            height: 1px;
+        }
+        .borderLeft {
+            border-left: 1px solid #aaaaaa;
+        }
+        .borderRight {
+            border-right: 1px solid #aaaaaa;
+        }
+        .borderTop {
+            border-top: 1px solid #aaaaaa;
+        }
+        .borderBottom {
+            border-bottom: 1px solid #aaaaaa;
+        }
+</style>
+</head>
+<body header="nlheader" header-height="10%" footer="nlfooter" footer-height="20pt" padding="0.5in 0.5in 0.5in 0.5in" size="Letter">
+		<table style="width: 100%; margin-top: 10px;">
+			<tr>
+					<td rowspan="2"><b>${record.billaddress}</b></td>
+			</tr>
+		</table> 
+
+		<table style="width: 100%; margin-top: 10px;">
+			<tr>
+					<td align="center"><b>PROFORMA INVOICE - TEMPORARY IMPORT</b></td>
+			</tr>
+			<tr>
+					<td align="center"><b>FOR CUSTOMS CLEARANCE ONLY</b></td>
+			</tr>
+			<tr>
+					<td align="right"><b>${record.trandate}</b></td>
+			</tr>
+		</table>    
+
+<#if record.item?has_content>
+
+<table class="itemtable" style="width: 100%; margin-top: 10px;"><!-- start items -->
+	<#assign indexInc = 0/>
+	<#assign subtotalGoldWeight = 0/>
+	<#assign subtotalStoneWeight = 0/>
+	<#assign subtotalNetWeight = 0/>
+	<#assign subtotalQty = 0/>
+	<#assign totalPrice = 0/>
+	<#list record.item as item>
+		<#if item_index==0>
+			<thead>
+				<tr>
+					<th align="center" colspan="1" class="borderLeft borderTop">#</th>
+					<th align="center" colspan="3" class="borderLeft borderTop">ILU</th>
+					<th colspan="4" class="borderLeft borderTop">CODE</th>
+					<th colspan="10" class="borderLeft borderTop" align="center">DESCRIPTION</th>
+					<th align="center" colspan="3" class="borderLeft borderTop">GOLD WEIGHT<br/>(G)</th>
+					<th align="center" colspan="3" class="borderLeft borderTop">STONE WEIGHT<br/>(G)</th>
+					<th align="center" colspan="3" class="borderLeft borderTop">NET WEIGHT<br/>(G)</th>
+					<th align="center" colspan="6" class="borderLeft borderTop">UNIT PRICE<br/>USD</th>
+					<th align="right" colspan="4" class="borderLeft borderTop">QTY</th>
+					<th align="center" colspan="6" class="borderLeft borderTop borderRight">TOTAL PRICE<br/>USD</th>
+				</tr>
+			</thead>
+		</#if>
+		<#assign indexInc = item_index + 1/>
+		<#assign subtotalGoldWeight += 0/>
+		<#assign subtotalStoneWeight += 0/>
+		<#assign subtotalNetWeight += 0/>
+		<#assign subtotalQty += item.quantity/>
+		<#assign totalPrice += item.amount/>
+		<tr>
+			<td align="center" colspan="1" line-height="150%" class="borderLeft borderTop">${indexInc}</td>
+			<td align="center" colspan="3" line-height="150%" class="borderLeft borderTop"></td>
+			<td colspan="4" class="borderLeft borderTop"><span class="itemname">${item.item}</span></td>
+			<td colspan="10" class="borderLeft borderTop">${item.description}</td>
+			<td align="right" colspan="3" class="borderLeft borderTop"></td>
+			<td align="right" colspan="3" class="borderLeft borderTop"></td>
+			<td align="right" colspan="3" class="borderLeft borderTop"></td>
+			<td align="right" colspan="6" class="borderLeft borderTop">${item.rate}</td>
+			<td align="right" colspan="4" class="borderLeft borderTop">${item.quantity}</td>
+			<td align="right" colspan="6" class="borderLeft borderTop borderRight">${item.amount}</td>
+		</tr>
+	</#list><!-- end items -->
+	<tr>
+		<td align="center" colspan="1" line-height="150%" class="borderLeft borderTop"></td>
+		<td align="center" colspan="3" line-height="150%" class="borderLeft borderTop"></td>
+		<td colspan="4" class="borderLeft borderTop"></td>
+		<td colspan="10" align="right" class="borderLeft borderTop"></td>
+		<td align="right" colspan="3" class="borderLeft borderTop"></td>
+		<td align="right" colspan="3" class="borderLeft borderTop"></td>
+		<td align="right" colspan="3" class="borderLeft borderTop"></td>
+		<td align="right" colspan="6" class="borderLeft borderTop"></td>
+		<td align="right" colspan="4" class="borderLeft borderTop"></td>
+		<td align="right" colspan="6" class="borderLeft borderTop borderRight"></td>
+	</tr>
+	<tr>
+		<td align="center" colspan="1" line-height="150%" class="borderLeft borderTop borderBottom"></td>
+		<td align="center" colspan="3" line-height="150%" class="borderLeft borderTop borderBottom"></td>
+		<td colspan="4" class="borderLeft borderTop borderBottom"></td>
+		<td colspan="10" align="right" class="borderLeft borderTop borderBottom"><b>TOTAL</b></td>
+		<td align="right" colspan="3" class="borderLeft borderTop borderBottom"><b></b></td>
+		<td align="right" colspan="3" class="borderLeft borderTop borderBottom"><b></b></td>
+		<td align="right" colspan="3" class="borderLeft borderTop borderBottom"><b></b></td>
+		<td align="right" colspan="6" class="borderLeft borderTop borderBottom"><b></b></td>
+		<td align="right" colspan="4" class="borderLeft borderTop borderBottom"><b>${subtotalQty}</b></td>
+		<td align="right" colspan="6" class="borderLeft borderTop borderRight borderBottom"><b>$${totalPrice?string(",##0.00")}</b></td>
+	</tr>
+	<#if record.discounttotal?string?has_content>
+		<tr>
+			<td align="center" colspan="1" line-height="150%" class="borderLeft borderTop borderBottom"></td>
+			<td align="center" colspan="3" line-height="150%" class="borderLeft borderTop borderBottom"></td>
+			<td colspan="4" class="borderLeft borderTop borderBottom"></td>
+			<td colspan="10" align="right" class="borderLeft borderTop borderBottom"></td>
+			<td align="right" colspan="3" class="borderLeft borderTop borderBottom"></td>
+			<td align="right" colspan="3" class="borderLeft borderTop borderBottom"></td>
+			<td align="right" colspan="3" class="borderLeft borderTop borderBottom"></td>
+			<td align="right" colspan="10" class="borderLeft borderTop borderBottom">${record.discountitem}</td>
+			<td align="right" colspan="6" class="borderLeft borderTop borderRight borderBottom">${record.discounttotal}</td>
+		</tr>
+	</#if>
+	<tr>
+		<td align="center" colspan="1" line-height="150%" class="borderLeft borderTop borderBottom"></td>
+		<td align="center" colspan="3" line-height="150%" class="borderLeft borderTop borderBottom"></td>
+		<td colspan="4" class="borderLeft borderTop borderBottom"></td>
+		<td colspan="10" align="right" class="borderLeft borderTop borderBottom"></td>
+		<td align="right" colspan="3" class="borderLeft borderTop borderBottom"></td>
+		<td align="right" colspan="3" class="borderLeft borderTop borderBottom"></td>
+		<td align="right" colspan="3" class="borderLeft borderTop borderBottom"></td>
+		<td align="right" colspan="10" class="borderLeft borderTop borderBottom"><b>TOTAL DUE</b></td>
+		<td align="right" colspan="6" class="borderLeft borderTop borderRight borderBottom"><b>${record.total}</b></td>
+	</tr>
+</table>
+<br/>
+<table style="width: 100%;">
+	<tr>
+		<td style="width: 50%">&nbsp;</td>
+		<td style="width: 50%"><img src="https://8297916.app.netsuite.com/core/media/media.nl?id=7147&amp;c=8297916&amp;h=dyE0w3CxuHk77yi0uCnUOGu69qltWL7iJ-rGik2oEn3zon8p" width = "346px" height = "176px"/></td>
+	</tr>
+</table>
+
+</#if>
+</body>
+</pdf>

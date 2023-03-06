@@ -1,0 +1,221 @@
+<?xml version="1.0"?><!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+<head>
+<#if .locale == "ru_RU">
+    <link name="verdana" type="font" subtype="opentype" src="${nsfont.verdana}" src-bold="${nsfont.verdana_bold}" bytes="2" />
+</#if>
+    <macrolist>
+        <macro id="nlheader">
+            <table class="header" style="width: 90%; font-size: 12pt; margin-left: 100px;">
+                <tr>
+                    <td class="deliverydetails-container-left" colspan="7" align="center">
+                        <#if companyInformation.logoUrl?length != 0>
+                            <img src="${companyInformation.logoUrl}" width = "100px" height = "100px" style="float: center; margin: 0px; padding: 0px" />
+                        </#if>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="deliverydetails-container-left" colspan="7" align="center">
+                        <table style="width: 100%; margin-top: 20px; line-height: 9pt;  font-size: 9pt;">
+                            <tr>
+                                <td align="center" style="text-transform:uppercase;">Nom : ${record.custrecord_mhdt_client}</td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="padding-top: 10px;">${record.custrecord_mhdt_client_addr}</td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="margin-left: -32px;">${record.custrecord_mhdt_client.phone}</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="deliverydetails-container-left" colspan="7" align="center">
+                        <table style="width: 100%; margin-top: 20px; line-height: 9pt;  font-size: 9pt;">
+                            <tr>
+                                <td><b>Bon Dépôt CLIENT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${record.name}</b></td>
+                            </tr>
+                            <tr>
+                                <td><b>Réparation</b></td>
+                            </tr>
+                            <tr>
+                                <td>Entrée&nbsp;&nbsp;&nbsp;${record.custrecord_mhdt_repair_date}</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                
+            </table>
+        </macro>
+        <macro id="nlfooter">
+            
+        </macro>
+        <macro id="disclaimer-header">
+
+        </macro>
+        <macro id="disclaimer-footer">
+
+        </macro>
+    </macrolist>
+    <style type="text/css">table {
+        <#if .locale == "zh_CN">
+            font-family: stsong, sans-serif;
+        <#elseif .locale == "zh_TW">
+            font-family: msung, sans-serif;
+        <#elseif .locale == "ja_JP">
+            font-family: heiseimin, sans-serif;
+        <#elseif .locale == "ko_KR">
+            font-family: hygothic, sans-serif;
+        <#elseif .locale == "ru_RU">
+            font-family: verdana;
+        <#else>
+            font-family: sans-serif;
+        </#if>
+            font-size: 12pt;
+            table-layout: fixed;
+        }
+        th {
+            font-weight: bold;
+            font-size: 8pt;
+            vertical-align: middle;
+            padding: 3px;
+            background-color: #aaaaaa;
+            color: #ffffff;
+        }
+        td {
+            padding: 4px 6px;
+        }
+        b {
+            font-weight: bold;
+            color: #333333;
+        }
+        table.header {
+            margin: 35px 40px 35px 43px;
+        }
+        table.header td {
+            padding: 0;
+            font-size: 8pt;
+        }
+        table.footer td {
+            padding: 0;
+            font-size: 8pt;
+        }
+        table.itemtable {
+            margin: 0px 43px;
+        }
+        td.designation {
+            border: 1px solid red;
+            border-radius: 30px;
+        }
+        table.subtotal {
+            margin: 0px 43px;
+        }
+
+        table.body td {
+            padding-top: 0px;
+        }
+        td.deliverydetails-container-left {
+            padding-right: 60px;
+        }
+        td.deliverydetails-container-right {
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+        td.deliverydetailslabels {
+            font-size: 9pt;
+            font-weight: bold;
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+        td.deliverydetails {
+            font-size: 9pt;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            font-weight: normal;
+        }
+        span.title {
+            font-size: 16pt;
+            font-weight: bold;
+        }
+        span.number {
+            font-size: 9pt;
+            font-weight: bold;
+        }
+        span.itemname {
+            line-height: 100%;
+        }
+        hr {
+            border-top: 2px dotted #aaaaaa;
+            width: 100%;
+            color: #ffffff;
+            background-color: #ffffff;
+            height: 2px;
+            margin-bottom: 35px;
+        }
+        .borderLeft {
+            border-left: 1px solid #aaaaaa;
+        }
+        .borderRight {
+            border-right: 1px solid #aaaaaa;
+        }
+        .borderTop {
+            border-top: 1px solid #aaaaaa;
+        }
+        .borderBottom {
+            border-bottom: 1px solid #aaaaaa;
+        }
+</style>
+</head>
+<body header="nlheader" header-height="210" footer="nlfooter" footer-height="170" padding="0in 0in 0in 0in" size="A4">
+
+<table class="itemtable" style="width: 90%; margin-top: 8px; margin-left: 100px; font-size: 9pt;">
+    <tr>
+        <td align="left" style="width: 25%; margin-top: 30px;">Désignation</td>
+    </tr>
+    <tr>
+        <td align="left" style="width: 25%; padding-top: 13px;" class="borderLeft borderBottom borderTop borderRight" height="150px">${record.custrecord_mhdt_repair_description}</td>
+    </tr>
+</table>
+<table class="itemtable" style="width: 90%; margin-top: 10px; margin-left: 100px;font-size: 9pt;">
+    <tr>
+        <td align="left" style="width: 25%; padding-top: 13px;">Travail à faire</td>
+    </tr>
+    <tr>
+        <td align="left" style="width: 25%; padding-top: 13px;" class="borderLeft borderBottom borderTop borderRight" height="150px">${record.custrecord_mhdt_repair}</td>
+    </tr>
+</table>
+<table class="itemtable" style="width: 90%; margin-top: 6px; margin-left: 100px;font-size: 9pt;">
+    <tr>
+        <td align="left" style="width: 25%; padding-top: 13px;">Prière de rapporter ce ticket pour réclamer votre réparation. En cas de perte de ce ticket, la maison<br/>
+n'est pas responsable des objets déposés. Passé le délai d’un an, les objets abandonnés pourront faire<br/>
+l'objet de la procédure prévue par Ia loi du 31/12/68.<br/>
+L'intervention sur un bijou ne garantit pas l'ensemble du bijou (ainsi que les dommages causés par<br/>
+des accidents ou mauvais traitements).<br/>
+Tout SAV pourra faire l'objet d'un devis préalable sans engagement,</td>
+    </tr>
+</table>
+<#assign vendor = ""/>
+<#list record.custrecord_mhdt_repair_shop?split(" ") as x>
+    <#assign vendor += x?substring(0, 1)/>
+</#list>
+
+<table class="itemtable" style="width: 90%; margin-top: 10px; margin-left: 100px;font-size: 9pt;">
+    <tr>
+        <td align="left" style="width: 25%; padding-top: 13px;">Poids</td>
+        <td style="width: 25%; padding-top: 13px;">${record.custrecord_mhdt_total_weights}</td>
+        <td align="left" style="width: 25%; padding-top: 13px;">Acompte</td>
+        <td style="width: 25%; padding-top: 13px;">0,00</td>
+    </tr>
+    <tr>
+        <td align="left" style="width: 25%; padding-top: 13px;">Vendeur</td>
+        <td style="width: 25%; padding-top: 13px;">${vendor}</td>
+        <td align="left" style="width: 25%; padding-top: 13px;">Prix</td>
+        <td style="width: 25%; padding-top: 13px;">&bnsp;</td>
+    </tr>
+</table>
+
+
+
+
+</body>
+</pdf>

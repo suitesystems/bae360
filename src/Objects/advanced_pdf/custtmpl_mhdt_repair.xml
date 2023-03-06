@@ -1,0 +1,10 @@
+<advancedpdftemplate scriptid="custtmpl_mhdt_repair" standard="STDTMPLCR_MHDT_REPAIR">
+  <description></description>
+  <displaysourcecode>T</displaysourcecode>
+  <isinactive>F</isinactive>
+  <preferred>T</preferred>
+  <printtype>CUSTOMRECORD</printtype>
+  <recordtype>[scriptid=customrecord_mhdt_repair]</recordtype>
+  <title>MHDT Repair PDF/HTML Template</title>
+  <trantype>CUSTOM</trantype>
+</advancedpdftemplate>

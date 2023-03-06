@@ -1,0 +1,9 @@
+<advancedpdftemplate scriptid="custtmpl_mhdt_proforma_invoice" standard="STDTMPLSALESORD">
+  <description></description>
+  <displaysourcecode>T</displaysourcecode>
+  <isinactive>F</isinactive>
+  <preferred>T</preferred>
+  <printtype>TRANSACTION</printtype>
+  <title>MHDT Proforma Invoice PDF/HTML Template</title>
+  <trantype>SALESORD</trantype>
+</advancedpdftemplate>
